@@ -22,9 +22,14 @@ const sendMessage = ctx => {
   ctx.io.emit('message', ctx.data);
 };
 
+const welCome = ctx => {
+  ctx.io.emit('welcomeMessage', ctx.data);
+};
+
 server([
   get('/', ctx => render('index.html')),
   socket('connect', updateCounter),
   socket('disconnect', updateCounter),
-  socket('message', sendMessage)
+  socket('message', sendMessage),
+  //socket('welcomeMessage', welCome)
 ]);
