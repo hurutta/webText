@@ -1,0 +1,18 @@
+{
+  "name": "webtext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage --forceExit"
+  },
+  "author": "Abid Jawad",
+  "license": "ISC",
+  "dependencies": {
+    "server": "^1.0.37"
+  },
+  "engines": {
+    "node": "17.2.0"
+  }
+}
