@@ -61,6 +61,13 @@ socket.on('message', function (data)
   		$('.chatbox').append('<p><strong>' + data.user + '</strong>: ' + data.message + ' <d1 style="text-align:right;color:gray;font-size: 10px;">' + strTime +'</d1></p>');
 	}
 
+  if(data.user!=user)
+  {
+    var beepsound = new Audio('https://www.soundjay.com/buttons/sounds/button-42.mp3'); 
+    beepsound.play(); 
+  }
+
+
   	var elem = document.getElementById("cha");		//auto matic scroll korbe eta diye, scroll down korbe
   	elem.scrollTop = elem.scrollHeight;
 });
