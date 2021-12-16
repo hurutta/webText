@@ -16,7 +16,7 @@ html, body
 main 
 {
   /*width: calc(100% - 20px);*/
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
   font-family: Helvetica, Arial, Sans, sans-serif;
   height: 100%;
@@ -27,15 +27,31 @@ main
 h1
 {
   margin: 0;
-  padding: 10px 0;
+  padding-top: 10px;
   font-size: 32px;
 }
 
-.user-count {
+.user-count 
+{
   margin: 0;
   padding: 10px 0;
   font-size: 15px;
   float: right;
+  text-align: right;
+}
+
+.online 
+{
+  float: right;
+  
+  font-size: 13px;
+  text-align: right;
+  border-bottom-left-radius: 20%;
+  color: black;
+  
+  
+  
+
 }
 
 .chatbox 
@@ -67,15 +83,24 @@ p
   margin: 0 0 5px 0;
 }
 
-/* join kora matro welcome msj   */
+/* join kora matro welcome msj and biday msj  */
 h6  
+{
+  text-align: center;
+  color:green;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+
+}
+h4
 {
   text-align: center;
   color:red;
   font-size: 12px;
   margin: 0 0 5px 0;
-
 }
+
+
 
 .d1
 {
