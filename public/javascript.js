@@ -27,6 +27,11 @@ socket.emit('welcome', { user: cookie.get('user') || 'নাম দেয় না
         $('.view').html('<h9 style="font-size:9px">&nbsp;&nbsp;&nbsp;সর্বমোট বার্তা : </h9> <img src="'+str2+'">');
 
 
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
 socket.on('onlineList', function (data) 
 {
 
@@ -34,13 +39,14 @@ socket.on('onlineList', function (data)
   	//{
    	//	console.log(data[i]);
   	//}
+    var unique = data.filter(onlyUnique);
     var str='<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Online_dot.png" width="4%">&nbsp';
-  	for(let i = 0; i < data.length;i++) 
+  	for(let i = 0; i < unique.length;i++) 
   	{
-        str=str+'<strong><a7 style="border-radius: 25px;border: 2px solid #73AD21;">'+data[i].slice(0,10)+'</a7></strong>&nbsp';
+        str=str+'<strong><a7 style="border-radius: 25px;border: 2px solid #73AD21;">'+unique[i].slice(0,8)+'</a7></strong>&nbsp';
   	}
     $('.online').html(str);
-  	console.log(data);
+  	//console.log(data);
   	//$('.user-count').html('<strong>অনলাইনে আছে </strong>'+data+'<strong> জন&nbsp;</strong>');		//data - koyjon user ache tar int
 });
 
@@ -106,9 +112,6 @@ socket.on('message', function (data)
   		$('.chatbox').append('<p><strong>' + data.user + '</strong>: ' + data.message + ' <d1 style="text-align:right;color:gray;font-size: 10px;">' + strTime +'</d1></p>');
 	    
 
-        //////// total no of texting
-        var str2="//counter.websiteout.net/compte.php?S=https://textweb.herokuapp.com/&C=36&D=0&N=0&M=0"+"?a=" + Math.random();
-        $('.view').html('<h9 style="font-size:9px">&nbsp;&nbsp;&nbsp;সর্বমোট বার্তা : </h9> <img src="'+str2+'">');
     }
 
   if(data.user!=user)
@@ -128,6 +131,9 @@ socket.on('message', function (data)
 // When the form is submitted
 $('form').submit(function (e) 
 {
+        //////// total no of texting
+        var str2="http://counter.websiteout.net/compte.php?S=http://localhost:3000/&C=36&D=0&N=0&M=0"+"?a=" + Math.random();
+        $('.view').html('<h9 style="font-size:9px">&nbsp;&nbsp;&nbsp;সর্বমোট বার্তা : </h9> <img src="'+str2+'">');
   // Avoid submitting it through HTTP
   e.preventDefault();
 
