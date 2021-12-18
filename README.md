@@ -1,9 +1,7 @@
 
 # webটেক্সট 
 
-Real time chat/texting website that allows multiple user to chat spontaneously. This project is done using javascript and NodeJS. As it's a realtime chat, it does not save any message in its server, all the message dissapear when everyone left the chat - which provides security and reliability. <sub> Total unique visitor : </sub>
-<a href="https://github.com/hurutta/webText/" target="_blank">
-<img src="https://counter.websiteout.net/compte.php?S=https://github.com/hurutta/webText/&C=36&D=5&N=0&M=1" Alt="web counter" border="0" /></a>
+Real time chat/texting website that allows multiple user to chat spontaneously. This project is done using javascript and NodeJS. As it's a realtime chat, it does not save any message in its server, all the message dissapear when everyone left the chat - which provides security and reliability. ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fhurutta%2FwebText)
 
 #
 
